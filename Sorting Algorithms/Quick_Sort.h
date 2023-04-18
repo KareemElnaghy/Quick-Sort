@@ -7,20 +7,22 @@
 
 #ifndef Quick_Sort_h
 #define Quick_Sort_h
-#include "Fill.h"
 
 class Quick_Sort
 {
 private:
     int *arr;
     int size;
-    static int count;
+    static int counter;
 public:
     Quick_Sort();
     ~Quick_Sort();
-    Quick_Sort(int *, int);
+    Quick_Sort(int);
+    int* getArr();
+    int getSize();
+    int getCounter();
     void fillArr();
-    void swap(int& , int&);
+    void swap(int&, int&);
     int partition(int *, int, int);
     void SortArr(int*, int, int);
     void PrintArr() const;
@@ -28,4 +30,4 @@ public:
 
 
 #endif /* Quick_Sort_h */
-Quick_Sort
+
