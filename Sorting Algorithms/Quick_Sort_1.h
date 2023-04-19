@@ -8,21 +8,20 @@
 #ifndef Quick_Sort_h
 #define Quick_Sort_h
 
-class Quick_Sort
+class QuickSort_1
 {
 private:
     int *arr;
     int size;
     static int counter;
 public:
-    Quick_Sort();
-    ~Quick_Sort();
-    Quick_Sort(int);
+    QuickSort_1();
+    ~QuickSort_1();
+    QuickSort_1(int);
     int* getArr();
     int getSize();
     int getCounter();
     void fillArr();
-    void swap(int&, int&);
     int partition(int *, int, int);
     void SortArr(int*, int, int);
     void PrintArr() const;

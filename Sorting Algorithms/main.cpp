@@ -5,13 +5,13 @@
 //  Created by Kareem Elnaghy on 4/16/23.
 //
 
-#include "Quick_Sort.h"
+#include "Quick_Sort_1.h"
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    Quick_Sort array(1000);
+    QuickSort_1 array(10000);
     
     array.fillArr();
     
