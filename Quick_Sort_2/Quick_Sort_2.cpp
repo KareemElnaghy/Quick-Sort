@@ -7,6 +7,8 @@
 
 #include "Quick_Sort_2.h"
 #include "Fill.h"
+#include <ctime>
+#include <cstdlib>
 #include <iostream>
 using namespace std;
 
@@ -44,34 +46,45 @@ void Quick_Sort_2::fillArr()
     Fill(arr,size);
 }
 
-int Quick_Sort_2::randomPartition(int *q, int low, int high);
+int Quick_Sort_2::randomPartition(int *q, int low, int high)
+{
+    srand(time(NULL));
+    int rndm = (rand() % (high - low)) + low;
+    
+    //swap(*(arr+(rndm-1)),*(arr+(high-1)));
+    swap(arr[rndm], arr[high]);
+    return partition(arr, low, high);
+}
 
 int Quick_Sort_2::partition(int *q, int low, int high) {
   
-      int pivot = arr[low];
-      int temp = high;
+      //int pivot = *(arr+(high-1));
+    int pivot = arr[high];
+      int temp = low-1;
     
-      for (int i = high; i > low; i--) {
+      for (int i = low; i < high; i++) {
           
-          if (arr[i] > pivot)
+          if (arr[i] <= pivot)
           {
-              swap(arr[i], arr[temp--]);
+              temp++;
+              swap(arr[temp], arr[i]);
           }
 
               counter++;
           
       }
-      swap(arr[low], arr[temp]);
+    swap(arr[temp+1], arr[high]);
         
-      return temp;
+      return (temp+1);
   
 }
 
 
 void Quick_Sort_2::SortArr(int *array, int low, int high) {    //Quicksort function
-    if (low < high) {
-        int pivotIndex = partition(array, low, high);
-        SortArr(array, low, pivotIndex - 1);
+    if (low < high)
+    {
+        int pivotIndex = randomPartition(array, low, high);
+        SortArr(array, low, pivotIndex-1);
         SortArr(array, pivotIndex + 1, high);
     }
 }
