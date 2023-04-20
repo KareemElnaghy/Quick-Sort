@@ -11,6 +11,12 @@
 #include <cstdlib>
 #include <ctime>
 
+void swap(int& x, int& y) {
+    int temp = x;
+    x = y;
+    y = temp;
+}
+
 void Fill(int *p, int num)
 {
  srand(time(NULL));
@@ -21,18 +27,12 @@ void Fill(int *p, int num)
  for (int i = num - 1; i >= 1; i--)
  {
      int j = rand() % (i + 1);
-     int temp = p[i];
-     p[i] = p[j];
-     p[j] = temp;
+     
+     swap(*(p+i),*(p+j));
  }
 
 }
 
-void swap(int& x, int& y) {
-    int temp = x;
-    x = y;
-    y = temp;
-}
 
 
 
