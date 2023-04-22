@@ -11,7 +11,7 @@ using namespace std;
 
 int main()
 {
-    QuickSort_1 array(1000);
+    QuickSort_1 array(10);
     array.fillArr();
     
     cout<<"First Element used as Pivot"<<endl;
@@ -28,7 +28,7 @@ int main()
     cout<<endl;
     
     
-    QuickSort_2 array1(1000);
+    QuickSort_2 array1(10);
 
     array1.fillArr();
     

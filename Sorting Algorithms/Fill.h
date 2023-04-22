@@ -17,18 +17,26 @@ void swap(int& x, int& y) {
     y = temp;
 }
 
+int RandInt(int i, int j)
+{
+    srand(time(NULL));
+    int random = rand() % (j+i);
+    return random;
+}
+
 void Fill(int *p, int num)
 {
- srand(time(NULL));
- for (int i = 0; i < num; i++)
+    int j = 0;
+ for (int i = 1; i <= num; i++)
  {
-     *(p+i) = i + 1;
+     *(p+j) = i;
+     j++;
  }
- for (int i = num - 1; i >= 1; i--)
+ for (int i = 2; i <num; i++)
  {
-     int j = rand() % (i + 1);
+     int m = RandInt(1, i);
      
-     swap(*(p+i),*(p+j));
+     swap(*(p+i),*(p+m));
  }
 
 }
