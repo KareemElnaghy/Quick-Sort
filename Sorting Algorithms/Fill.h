@@ -26,11 +26,10 @@ int RandInt(int i, int j)
 
 void Fill(int *p, int num)
 {
-    int j = 0;
+ 
  for (int i = 1; i <= num; i++)
  {
-     *(p+j) = i;
-     j++;
+     *(p+(i-1)) = i;
  }
  for (int i = 2; i <num; i++)
  {
